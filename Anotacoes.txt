@@ -1,0 +1,24 @@
+React:
+criar APP: npx create-react-app my-app
+Instalar Axios(Dependencia): npm install axios 
+Start app : npm Start
+tutorial reac+Axios GET: https://www.youtube.com/watch?v=vfrEAz0BSbA
+
+instalar routes(Dependencia): npm install --save react-router-dom
+
+
+Python Backend:
+comandos:
+Cria o arquivo de banco de dados: python manage.py migrate 
+Instalar a Dependencia: python -m pip install django-cors-headers
+Start no servidor: python manage.py runserver 8080
+
+OBS editar o arquivo managementsystem\settings.py
+Adicionar a linha: CORS_ORIGIN_ALLOW_ALL = True
+
+Adicionar o item : 'corsheaders' em INSTALLED_APPS
+adicionar os itens: 
+'corsheaders.middleware.CorsMiddleware',
+'django.middleware.common.CommonMiddleware'
+em MIDDLEWARE = 
+
