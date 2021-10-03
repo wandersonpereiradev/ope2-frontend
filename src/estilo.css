@@ -1,0 +1,9 @@
+.tabela{
+    width: 100%;
+}
+.coluna{
+    width: 100px;
+    white-space: nowrap;
+    border: solid;
+    text-align: center;
+}
