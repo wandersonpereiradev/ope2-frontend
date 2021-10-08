@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { SearchInput } from "../../components/searchInput";
 import { TabelaDeProdutos } from "../../components/tabela-produtos";
 import api from '../API/api';
 import '../Estilo/estilo.css'
