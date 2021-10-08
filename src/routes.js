@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 import ListarProdutos from './pages/produtos/index'
 import ListarServicos from './pages/servicos/index'
