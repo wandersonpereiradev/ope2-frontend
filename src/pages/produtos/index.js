@@ -1,19 +1,28 @@
 import React, { Component } from "react";
+import { SearchInput } from "../../components/searchInput";
+import { TabelaDeProdutos } from "../../components/tabela-produtos";
 import api from '../API/api';
 import '../Estilo/estilo.css'
-import '../Estilo/menu.css'
 import '../Estilo/styles.css';
+
 class ListarProdutos extends Component {
   state = {
     produtos: [],
   }
 
   async componentDidMount() {
-    const response = await api.get('produtos/?format=json');
+    //const response = await api.get('produtos/?format=json');
+    const response = await api.get('http://127.0.0.1:8000/sistema/produtos/');
     console.log(response.data);
     this.setState({ produtos: response.data })
     
   }
+
+  handleChange = (e) => {
+    const { value } = e.target;
+    this.setState({ searchValue: value })
+  }
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////d
@@ -29,7 +38,6 @@ class ListarProdutos extends Component {
       
         const ItensOrdenados = React.useMemo(() => {
           let ListaItensOrdenar = [...produtosnovo];
-          console.log(produtosnovo)
           if (ConfigOrdenacao !== null) {
             
             ListaItensOrdenar.sort((a, b) => {
@@ -37,7 +45,7 @@ class ListarProdutos extends Component {
               console.log(a[ConfigOrdenacao.OrdenarColuna],'<<->>',b[ConfigOrdenacao.OrdenarColuna])
 
               if (a[ConfigOrdenacao.OrdenarColuna] < b[ConfigOrdenacao.OrdenarColuna]) {
-                return ConfigOrdenacao.Direcao === 'ascendente' ? -1 : 1;
+                return ConfigOrdenacao.Direcao === 'ascendente' ? -1 : 1; 
               }
               if (a[ConfigOrdenacao.OrdenarColuna] > b[ConfigOrdenacao.OrdenarColuna]) {
                 return ConfigOrdenacao.Direcao === 'ascendente' ? 1 : -1;
@@ -72,73 +80,11 @@ class ListarProdutos extends Component {
               }
               return ConfigOrdenacao.OrdenarColuna === nome ? ConfigOrdenacao.Direcao : undefined;
             };
-            return (
-              <table>
-                <caption><h3>Lista de Produtos</h3></caption>
-                <br></br>
-                <thead>
-                  <tr>
-                  <th>
-                      <button
-                        type="button"
-                        onClick={() => Ordenar('codproduto')}
-                        className={ObterClasse('codproduto')}
-                      >
-                        Codigo do Produto
-                      </button>
-                    </th>
-                    <th>
-                      <button
-                        type="button"
-                        onClick={() => Ordenar('nome')}
-                        className={ObterClasse('nome')}
-                      >
-                        Descrição
-                      </button>
-                    </th>
-                    <th>
-                      <button
-                        type="button"
-                        onClick={() => Ordenar('categoria')}
-                        className={ObterClasse('categoria')}
-                      >
-                        Categoria
-                      </button>
-                    </th>
-                    <th>
-                      <button
-                        type="button"
-                        onClick={() => Ordenar('quantidade')}
-                        className={ObterClasse('quantidade')}
-                      >
-                        Quantidade Estoque
-                      </button>
-                    </th>
-                    <th>
-                      <button
-                        type="button"
-                        onClick={() => Ordenar('preco')}
-                        className={ObterClasse('preco')}
-                      >
-                        Preço
-                      </button>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {produtosnovo.map((item) => (
-                    <tr OrdenarColuna={item.id_produto}>
-                      <td OrdenarColuna={item.codigo_produto}>{item.codigo_produto}</td>
-                      <td OrdenarColuna={item.descricao}>{item.descricao}</td>
-                      <td OrdenarColuna={item.categoria}>{item.categoria}</td>
-                      <td OrdenarColuna={item.quantidade}>{item.quantidade}</td>
-                      <td OrdenarColuna={item.preco_unitario}>R${item.preco_unitario}</td>
-                      
-                      
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+
+            return (  
+              <section className = "container">
+                <TabelaDeProdutos produtos={produtosnovo} Ordenar={Ordenar} ObterClasse={ObterClasse} />
+              </section>      
             );
           };
 
