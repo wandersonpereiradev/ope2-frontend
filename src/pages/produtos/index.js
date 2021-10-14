@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { TabelaDeProdutos } from "../../components/tabela-produtos";
-import Button from '@material-ui/core/Button';
 import api from '../API/api';
 import '../Estilo/estilo.css'
 import '../Estilo/styles.css';
