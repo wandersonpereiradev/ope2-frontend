@@ -10,7 +10,7 @@ function Menu() {
                     <hr class="hr" />
                 </ul>
                 <ul>
-                    <li><a class="fonteli" href="/listar-servicos"><i class="bi bi-file-person"></i> Clientes</a></li>
+                    <li><a class="fonteli" href="/cliente-cadastrar"><i class="bi bi-file-person"></i> Clientes</a></li>
                     <li><a class="fonteli" href="/listar-produtos"><i class="bi bi-calendar-plus"></i> Produtos</a></li>
                     <li><a class="fonteli" href="/listar-servicos"><i class="bi bi-calendar-plus"></i> Servicos</a></li>
                     <li><a class="fonteli" href="/listar-servicos"><i class="bi bi-cart-check"></i> Vendas</a></li>
@@ -18,6 +18,5 @@ function Menu() {
             </nav>
         </div>
     )
-
 };
 export default Menu;
