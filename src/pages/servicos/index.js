@@ -1,40 +1,32 @@
 import React, { Component } from "react";
+import { TabelaDeProdutos } from "../../components/tabela-servicos/index";
+import Button from '@material-ui/core/Button';
 import api from '../API/api';
 import '../Estilo/estilo.css'
-class ListarServicos extends Component{
-  state={
-    servicos:[],
+import '../Estilo/styles.css';
+
+class ListarProdutos extends Component {
+  state = {
+    produtos: [],
   }
 
-  async componentDidMount(){
-    const response = await api.get('servicos/?format=json');
+  async componentDidMount() {
+    //const response = await api.get('produtos/?format=json');
+    const response = await api.get('http://127.0.0.1:8080/servicos/');
     console.log(response.data);
-    this.setState({servicos: response.data})    
+    this.setState({ produtos: response.data })
+
   }
-  render(){
-  const {servicos}= this.state;
+
+  render() {
+    const { produtos } = this.state;
 
     return (
-      <div>
-        <h1>Listar Servicos</h1>
-        {console.log(servicos)}
-        {servicos.map(servico =>(
-          <table>
-            <tr class='tabela' key={servico.id_servico}>
-            <td class='tabela coluna'>Cliente ID: </td>
-            <td class='tabela coluna'>{servico.cliente_id}</td>
-            <td class='tabela coluna'>Veiculo: </td>
-            <td class='tabela coluna'>{servico.veiculo}</td>
-            <td class='tabela coluna'>Serviço Realizado: </td>
-            <td class='tabela coluna'>{servico.servico_realizado}</td>
-            </tr>
-          </table>
-          
-        )
-        )}
-      </div>
+      <section className="">
+        <TabelaDeProdutos produtos={produtos} />
+      </section>
     )
   }
 
 }
-export default ListarServicos;
+export default ListarProdutos;
