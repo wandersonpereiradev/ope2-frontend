@@ -5,7 +5,10 @@ import SignIn from "./pages/login/Index";
 import MenuDeProdutos from './pages/produtos/index'
 import ListarProdutos from './pages/produtos/listarprodutos/index'
 import ListarServicos from './pages/servicos/index'
+import TelaVendas from './pages/vendas/index'
+import CadastroCompras from './pages/compras/index'
 import ColorTextFields from './pages/clientes/clientecadastrar/index'
+
 
 function Routes() {
     return (
@@ -15,6 +18,9 @@ function Routes() {
                 <Route path="/cliente-cadastrar" exact component={ColorTextFields} />
                 <Route path="/listar-produtos" exact component={ListarProdutos} />
                 <Route path="/listar-servicos" exact component={ListarServicos} />
+                <Route path="/cadastro-compras" exact component={CadastroCompras} />
+                <Route path="/cadastro-vendas" exact component={TelaVendas} />
+
                 <Route path="/" exact component={SignIn} />
             </switch>
         </BrowserRouter>

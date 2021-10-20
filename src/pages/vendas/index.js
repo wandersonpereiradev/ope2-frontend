@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import api from '../API/api';
 import '../Estilo/estilo.css'
 import '../Estilo/styles.css';
-import ColorTextFields from '../../components/cadastro-compras/index'
+import ColorTextFields from '../../components/vendas/index'
 
-class CadastroCompras extends Component {
+class TelaVendas extends Component {
   
   async componentDidMount() {
     //const response = await api.get('produtos/?format=json');
@@ -21,4 +21,4 @@ class CadastroCompras extends Component {
   }
 
 }
-export default CadastroCompras;
+export default TelaVendas;

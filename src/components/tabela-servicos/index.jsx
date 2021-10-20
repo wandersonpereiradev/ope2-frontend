@@ -7,7 +7,7 @@ export const TabelaDeProdutos = ({ produtos}) => {
       <div class="pai">
       <Menu/>
       <div class="div1">
-      <h1>Listar Produtos</h1>
+      <h1>Serviços Executados</h1>
       <hr/>
       <br/>
       {console.log(produtos)}

@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { TabelaDeProdutos } from "../../components/tabela-servicos/index";
-import Button from '@material-ui/core/Button';
 import api from '../API/api';
 import '../Estilo/estilo.css'
 import '../Estilo/styles.css';
 
-class ListarProdutos extends Component {
+class ListarServicos extends Component {
   state = {
     produtos: [],
   }
@@ -29,4 +28,4 @@ class ListarProdutos extends Component {
   }
 
 }
-export default ListarProdutos;
+export default ListarServicos;

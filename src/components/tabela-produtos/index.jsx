@@ -1,5 +1,6 @@
 import './style.css'
 import Menu from '../menu/menu.jsx'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 
 export const TabelaDeProdutos = ({ produtos}) => {
@@ -23,7 +24,7 @@ export const TabelaDeProdutos = ({ produtos}) => {
           </thead>
           <tbody>              
 
-      {produtos.map(produto => (
+      {produtos.map((produto,i) => (
                   <tr class='tabela' key={produto.id_produto}>
                   <td class='tabela coluna'>{produto.categoria}</td>
                   <td class='tabela coluna'>{produto.descricao}</td>
