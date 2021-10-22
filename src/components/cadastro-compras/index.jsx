@@ -8,6 +8,7 @@ import './style.css'
 import Menu from '../menu/menu.jsx'
 import Select from './select.jsx';
 import Lista from './lista-compras/index.jsx';
+import cadastrarnovo from './post.js'
 
 
 
@@ -66,15 +67,15 @@ export default function ColorTextFields() {
                         noValidate
                         autoComplete="off"
                     >
-                        <TextField label="Código Produto" color="primary" focused />
-                        <TextField label="Produto" color="primary" focused />
-                        <TextField label="Categoria" color="primary" focused />
+                        <TextField id="codigo_produto" label="Código Produto" color="primary" focused />
+                        <TextField id="descricao" label="Produto" color="primary" focused />
+                        <TextField id="categoria" label="Categoria" color="primary" focused />
                         <br/>
-                        <TextField label="Quantidade" color="primary" focused />
-                        <TextField label="Valor Unitário" color="primary" focused />
+                        <TextField id="quantidade" label="Quantidade" color="primary" focused />
+                        <TextField id="preco_unitario"label="Valor Unitário" color="primary" focused />
                         <TextField label="Valor Total" color="primary" focused />
                         <Select/>
-                        <CadastrarButton size="large" variant="outlined" endIcon={<SendIcon />}>Cadastrar Compra</CadastrarButton>
+                        <CadastrarButton size="large" variant="outlined" onClick={() =>cadastrarnovo()} endIcon={<SendIcon />}>Cadastrar Compra</CadastrarButton>
                         <br />
                         <br />
                     <Lista />

@@ -1,0 +1,17 @@
+.div10{
+    display: flex;
+    justify-content: center;
+    
+  }
+  .formulario{
+    margin-top: 90px;
+    display: flex;
+    justify-content: left;
+    position: absolute;
+  }
+  h1{
+    padding-top: 35px;
+    font-size: 45px;
+  }
+
+

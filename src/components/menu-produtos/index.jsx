@@ -1,5 +1,7 @@
 import './style.css'
 import Menu from '../menu/menu.jsx'
+import botaocadastar from './botaocadastrar'
+import botaolistar from './botaolistar'
 
 
 export const MenuDeProdutos = () => {
@@ -12,12 +14,12 @@ export const MenuDeProdutos = () => {
         <br />
 
         <div class="acao1">
-          <button  onclick="window.location.href='/page2'"  class="BTN-Editar-Listar">Editar Produtos </button>   
+          <button  onClick={() => botaocadastar()} class="BTN-Editar-Listar">Cadastrar Produtos</button>   
           <br />
           <i class="bi bi-pencil-square iconeeditar"></i>
         </div>
         <div class="acao2">
-          <button class="BTN-Editar-Listar">Listar Produtos</button>
+          <button onClick={() => botaolistar()} class="BTN-Editar-Listar">Listar Produtos</button>
           <br />
           <i class="bi bi-card-checklist iconelistar"></i>
         </div>
