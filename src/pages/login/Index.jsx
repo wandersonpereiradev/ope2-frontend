@@ -9,6 +9,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import logar from './logar';
 
 import { BrowserRouter as Router, Route, } from "react-router-dom";
 
@@ -60,6 +61,7 @@ export default function SignIn() {
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
+              id="login"
               margin="normal"
               required
               fullWidth
@@ -81,6 +83,7 @@ export default function SignIn() {
             />
             
             <Button
+              onClick={ () => logar()}
               type="submit"
               fullWidth
               variant="contained"
