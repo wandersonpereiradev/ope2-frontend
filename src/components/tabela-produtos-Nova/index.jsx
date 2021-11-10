@@ -1,5 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import Menu from '../menu/menu.jsx';
 import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
 import {
@@ -113,7 +114,9 @@ export default function QuickFilteringGrid() {
   }, [produtoslist]);
   
   return (
-    <div style={{ height: 500, width: '105%' }}>
+    
+    <div style={{ height: 300, width: '105%' }}>
+      <Menu/>
       <DataGrid
         components={{ Toolbar: QuickSearchToolbar }}
         rows={rows} //define onde vamos buscar os registros neste caso varivael rows da linha 98 e renderiza em tela

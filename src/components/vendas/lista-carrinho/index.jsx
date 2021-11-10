@@ -7,6 +7,7 @@ import {
   GridToolbarDensitySelector,
   GridToolbarFilterButton,
 } from '@mui/x-data-grid';
+import { useDemoData } from '@mui/x-data-grid-generator';
 import ClearIcon from '@mui/icons-material/Clear';
 import SearchIcon from '@mui/icons-material/Search';
 import { createTheme } from '@mui/material/styles';
@@ -18,9 +19,15 @@ function escapeRegExp(value) {
 }
 
 
-// Map Json dados pedidos para produtoslist
-const produtoslist = require("./dados")
-const colunasnv = require("./colunas")
+// Map Json dados pedidos para teste
+const teste = require("./dados")
+console.log("funcionou",teste)
+{teste.map((test,i) => (
+  console.log(test.id_pedido)
+))}
+
+
+
 
 const defaultTheme = createTheme();
 const useStyles = makeStyles(
@@ -93,15 +100,21 @@ QuickSearchToolbar.propTypes = {
 };
 
 export default function QuickFilteringGrid() {
+  const { data } = useDemoData({
+    dataSet: 'Commodity',
+    rowLength: 100,
+    maxColumns: 6,
+    
+  });
+
   const [searchText, setSearchText] = React.useState('');
-  const [rows, setRows] = React.useState(produtoslist);
+  const [rows, setRows] = React.useState(data.rows);
 
   const requestSearch = (searchValue) => {
     setSearchText(searchValue);
     const searchRegex = new RegExp(escapeRegExp(searchValue), 'i');
-    const filteredRows = produtoslist.filter((row) => {
+    const filteredRows = data.rows.filter((row) => {
       return Object.keys(row).some((field) => {
-        console.log(searchRegex.test(row[field].toString()))
         return searchRegex.test(row[field].toString());
       });
     });
@@ -109,15 +122,20 @@ export default function QuickFilteringGrid() {
   };
 
   React.useEffect(() => {
-    setRows(produtoslist);
-  }, [produtoslist]);
+    setRows(data.rows);
+  }, [data.rows]);
   
+  //verificando dados
+  const colunas = data.columns[5].headerName
+  {console.log(colunas)}
+
+
   return (
-    <div style={{ height: 500, width: '105%' }}>
+    <div style={{ height: 300, width: '100%' }}>
       <DataGrid
         components={{ Toolbar: QuickSearchToolbar }}
-        rows={rows} //define onde vamos buscar os registros neste caso varivael rows da linha 98 e renderiza em tela
-        columns={colunasnv} //define onde vamos buscar os titulos das colunas neste caso varivael colunasnv da linha 24 e renderiza em tela
+        rows={rows}
+        columns={data.columns}
         
         componentsProps={{
           toolbar: {

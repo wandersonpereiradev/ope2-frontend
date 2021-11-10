@@ -106,6 +106,8 @@ export default function QuickFilteringGrid() {
   const [searchText, setSearchText] = React.useState('');
   const [rows, setRows] = React.useState(data.rows);
 
+  console.log(data)
+  
   const requestSearch = (searchValue) => {
     setSearchText(searchValue);
     const searchRegex = new RegExp(escapeRegExp(searchValue), 'i');

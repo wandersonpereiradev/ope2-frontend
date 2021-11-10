@@ -1,0 +1,33 @@
+[
+    {
+        "field": "id_pedido",
+        "headerName": "ID",
+        "width": 110,
+        "editable": true
+    },
+    {
+        "field": "fornecedor",
+        "headerName": "Fornecedor",
+        "width": 150,
+        "editable": false
+    },
+    {
+        "field": "categoria",
+        "headerName": "Categoria",
+        "width": 150,
+        "editable": false
+    },
+    {
+        "field": "quantidade",
+        "headerName": "Qtd.Estoque",
+        "width": 180,
+        "editable": false
+    },
+    {
+        "field": "valor_und",
+        "headerName": "Valor Un",
+        "width": 150,
+        "editable": false
+    }
+    
+]

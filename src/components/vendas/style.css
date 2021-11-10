@@ -1,17 +1,29 @@
 .div10{
     display: flex;
-    justify-content: center;
-    
+    justify-content: center;      
+
   }
   .formulario{
     margin-top: 90px;
     display: flex;
     justify-content: left;
     position: absolute;
+    
   }
   h1{
     padding-top: 35px;
     font-size: 45px;
+    
   }
+.div11{
+  display: flex;
+  flex-direction: column;
+  
+}
 
-
+.ctnFlex{
+  display: flex;
+  justify-content: space-between;
+  width: 1020px;
+  
+}
