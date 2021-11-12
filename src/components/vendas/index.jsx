@@ -10,7 +10,6 @@ import Select from './select.jsx';
 import Lista from './lista-vendas/index.jsx';
 
 
-
 const CadastrarButton = styled(Button)({
   boxShadow: 'none',
   textTransform: 'block',
@@ -51,8 +50,9 @@ const CadastrarButton = styled(Button)({
 });
 
 
-export default function ColorTextFields() {
-
+export default function ColorTextFields({produtos3}) {
+  const produtos4 = produtos3
+  console.log("aquiiiiii",produtos4)
   var tamanho = []
   var quantidadeprodutos = 11 //define quantidade de produtos
   for (let index = 0; index < quantidadeprodutos; index++) {
@@ -73,7 +73,7 @@ export default function ColorTextFields() {
   ))
 
   return (
-    <div class="pai">
+    <div class="pai"> 
       <Menu />
       <div class="div10 ">
         <h1>Cadastrar Vendas</h1>
@@ -95,7 +95,7 @@ export default function ColorTextFields() {
             <br />
             <br />
             <h3>Consultar</h3>
-            <Lista />
+            <Lista produtos4={produtos4}/>
           </Box>
 
         </div>
@@ -106,3 +106,4 @@ export default function ColorTextFields() {
 
   );
 }
+

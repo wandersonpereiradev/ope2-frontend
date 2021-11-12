@@ -1,13 +1,13 @@
 [
     {
-        "field": "id_pedido",
-        "headerName": "ID",
-        "width": 110,
-        "editable": true
+        "field": "descricao",
+        "headerName": "Produto",
+        "width": 350,
+        "editable": false
     },
     {
-        "field": "fornecedor",
-        "headerName": "Fornecedor",
+        "field": "codigo_produto",
+        "headerName": "Código Produto",
         "width": 150,
         "editable": false
     },
@@ -24,7 +24,7 @@
         "editable": false
     },
     {
-        "field": "valor_und",
+        "field": "preco_unitario",
         "headerName": "Valor Un",
         "width": 150,
         "editable": false

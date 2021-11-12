@@ -1,0 +1,11 @@
+.conteudo{
+    margin-left: 232px;
+    height: 800px;
+}
+.titulo{
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.938);
+    color: white;
+    height: 57px;
+}

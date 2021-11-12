@@ -5,20 +5,19 @@ import TextField from '@mui/material/TextField';
 import {
   DataGrid,
   GridToolbarDensitySelector,
-  GridToolbarFilterButton,
+  GridToolbarFilterButton,ptBR,
 } from '@mui/x-data-grid';
 import ClearIcon from '@mui/icons-material/Clear';
 import SearchIcon from '@mui/icons-material/Search';
 import { createTheme } from '@mui/material/styles';
 import { createStyles, makeStyles } from '@mui/styles';
 
-
 function escapeRegExp(value) {
   return value.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
 }
 
-
-// Map Json dados pedidos para produtoslist
+// Map Json dados pedidos para produtos43
+//const produtos5 = {produtos4}
 const produtoslist = require("./dados")
 const colunasnv = require("./colunas")
 
@@ -92,14 +91,16 @@ QuickSearchToolbar.propTypes = {
   value: PropTypes.string.isRequired,
 };
 
-export default function QuickFilteringGrid() {
+export default function QuickFilteringGrid({produtos4}) {
+  console.log("veio",produtos4)
+  const produtos43 = produtos4
   const [searchText, setSearchText] = React.useState('');
-  const [rows, setRows] = React.useState(produtoslist);
+  const [rows, setRows] = React.useState(produtos43);
 
   const requestSearch = (searchValue) => {
     setSearchText(searchValue);
     const searchRegex = new RegExp(escapeRegExp(searchValue), 'i');
-    const filteredRows = produtoslist.filter((row) => {
+    const filteredRows = produtos43.filter((row) => {
       return Object.keys(row).some((field) => {
         console.log(searchRegex.test(row[field].toString()))
         return searchRegex.test(row[field].toString());
@@ -109,12 +110,13 @@ export default function QuickFilteringGrid() {
   };
 
   React.useEffect(() => {
-    setRows(produtoslist);
-  }, [produtoslist]);
+    setRows(produtos43);
+  }, [produtos43]);
   
   return (
     <div style={{ height: 500, width: '105%' }}>
       <DataGrid
+      localeText={ptBR.props.MuiDataGrid.localeText}
         components={{ Toolbar: QuickSearchToolbar }}
         rows={rows} //define onde vamos buscar os registros neste caso varivael rows da linha 98 e renderiza em tela
         columns={colunasnv} //define onde vamos buscar os titulos das colunas neste caso varivael colunasnv da linha 24 e renderiza em tela

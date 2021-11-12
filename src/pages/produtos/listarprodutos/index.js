@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {TabelaDeProdutos} from "../../../components/tabela-produtos/index";
+import TabelaDeProdutos from "../../../components/tabela-produtos-Nova/index";
 import api from '../../API/api';
 import '../../Estilo/estilo.css'
 import '../../Estilo/styles.css';
