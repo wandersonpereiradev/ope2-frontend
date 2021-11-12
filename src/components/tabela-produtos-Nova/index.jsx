@@ -23,6 +23,7 @@ function escapeRegExp(value) {
 const produtoslist = require("./dados")
 const colunasnv = require("./colunas")
 
+
 const defaultTheme = createTheme();
 const useStyles = makeStyles(
   (theme) =>
@@ -33,17 +34,17 @@ const useStyles = makeStyles(
         display: 'flex',
         alignItems: 'flex-start',
         flexWrap: 'wrap',
-        
+
       },
       textField: {
         [theme.breakpoints.down('xs')]: {
           width: '100%',
-                    
+
         },
         margin: theme.spacing(1, 0.5, 1.5),
         '& .MuiSvgIcon-root': {
           marginRight: theme.spacing(0.5),
-          
+
         },
         '& .MuiInput-underline:before': {
           borderBottom: `1px solid ${theme.palette.divider}`,
@@ -59,10 +60,13 @@ function QuickSearchToolbar(props) {
   return (
     <div className={classes.root} >
       <div>
+
         <GridToolbarFilterButton />
         <GridToolbarDensitySelector />
+
       </div>
       <TextField
+
         variant="standard"
         value={props.value}
         onChange={props.onChange}
@@ -72,6 +76,7 @@ function QuickSearchToolbar(props) {
           startAdornment: <SearchIcon fontSize="small" />,
           endAdornment: (
             <IconButton
+
               title="Clear"
               aria-label="Clear"
               size="small"
@@ -93,8 +98,8 @@ QuickSearchToolbar.propTypes = {
   value: PropTypes.string.isRequired,
 };
 
-export default function QuickFilteringGrid({produtos}) {
-  console.log("veio",produtos)
+export default function QuickFilteringGrid({ produtos }) {
+  console.log("veio", produtos)
   const produtos43 = produtos
   const [searchText, setSearchText] = React.useState('');
   const [rows, setRows] = React.useState(produtos43);
@@ -115,29 +120,42 @@ export default function QuickFilteringGrid({produtos}) {
   React.useEffect(() => {
     setRows(produtos43);
   }, [produtos43]);
-  
+
+
+  const FormatarMoeda = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  });
+  const BRL = {
+    type: 'number',
+    width: 130,
+    valueFormatter: ({ value }) => FormatarMoeda.format(Number(value)),
+    cellClassName: 'font-tabular-nums',
+  };
+
+
   return (
     <div>
-      <Menu />  
-    
-    <div class="conteudo" style={{ width: '85%' }}>
-      <h1 class="titulo">Produtos</h1>
-          
-      <DataGrid
-        localeText={ptBR.props.MuiDataGrid.localeText}
-        components={{ Toolbar: QuickSearchToolbar }}
-        rows={rows} //define onde vamos buscar os registros neste caso varivael rows da linha 98 e renderiza em tela
-        columns={colunasnv} //define onde vamos buscar os titulos das colunas neste caso varivael colunasnv da linha 24 e renderiza em tela
-        
-        componentsProps={{
-          toolbar: {
-            value: searchText,
-            onChange: (event) => requestSearch(event.target.value),
-            clearSearch: () => requestSearch(''),
-          },
-        }}
-      />
-    </div>
+      <Menu />
+
+      <div class="conteudo" style={{ width: '85%' }}>
+        <h1 class="titulo">Produtos</h1>
+
+        <DataGrid
+          localeText={ptBR.props.MuiDataGrid.localeText}
+          components={{ Toolbar: QuickSearchToolbar }}
+          rows={rows} //define onde vamos buscar os registros neste caso varivael rows da linha 98 e renderiza em tela
+          columns={colunasnv} //define onde vamos buscar os titulos das colunas neste caso varivael colunasnv da linha 24 e renderiza em tela
+          //columns={[colunasnv[0],colunasnv[1],colunasnv[2],colunasnv[3], {field: 'preco_unitario' , ...BRL} ] }
+          componentsProps={{
+            toolbar: {
+              value: searchText,
+              onChange: (event) => requestSearch(event.target.value),
+              clearSearch: () => requestSearch(''),
+            },
+          }}
+        />
+      </div>
     </div>
   );
 }

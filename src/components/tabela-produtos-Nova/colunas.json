@@ -27,7 +27,9 @@
         "field": "preco_unitario",
         "headerName": "Valor Un",
         "width": 150,
-        "editable": false
+        "editable": false,
+        "style": "currency",
+        "currency": "BRL"
     }
     
 ]

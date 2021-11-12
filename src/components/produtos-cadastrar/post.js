@@ -6,6 +6,7 @@ function cadastrarnovo() {
     var quantidade = document.getElementById('quantidade').value;
     var categoria = document.getElementById('categoria').value;
     var data = JSON.stringify({
+        "id":"",
         "id_produto": "",
         "codigo_produto": codigo_produto,
         "descricao": descricao,
