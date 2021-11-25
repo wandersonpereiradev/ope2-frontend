@@ -34,6 +34,7 @@ const useStyles = makeStyles(
         display: 'flex',
         alignItems: 'flex-start',
         flexWrap: 'wrap',
+        
 
       },
       textField: {
@@ -58,7 +59,8 @@ function QuickSearchToolbar(props) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root} >
+    <div style={{ 'margin-top' : '100px' }}className={classes.root} >
+      
       <div>
 
         <GridToolbarFilterButton />

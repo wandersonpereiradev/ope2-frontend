@@ -8,6 +8,7 @@
     display: flex;
     justify-content: left;
     position: absolute;
+    padding-top: 25px;
     
   }
   h1{
@@ -26,4 +27,15 @@
   justify-content: space-between;
   width: 1020px;
   
+}
+
+.titulo{
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.938);
+  color: white;
+  height: 57px;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
 }

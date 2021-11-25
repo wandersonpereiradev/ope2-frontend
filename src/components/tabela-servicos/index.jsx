@@ -1,39 +1,163 @@
-import './style.css'
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import IconButton from '@mui/material/IconButton';
+import TextField from '@mui/material/TextField';
+import {
+  DataGrid,
+  GridToolbarDensitySelector,
+  GridToolbarFilterButton, ptBR
+} from '@mui/x-data-grid';
+import ClearIcon from '@mui/icons-material/Clear';
+import SearchIcon from '@mui/icons-material/Search';
+import { createTheme } from '@mui/material/styles';
+import { createStyles, makeStyles } from '@mui/styles';
 import Menu from '../menu/menu.jsx'
+import './style.css'
+
+function escapeRegExp(value) {
+  return value.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+}
+
+// Map Json dados pedidos para produtos43
+//const produtos5 = {produtos4}
+const produtoslist = require("./dados")
+const colunasnv = require("./colunas")
 
 
-export const TabelaDeProdutos = ({ produtos}) => {
-    return (
-      <div class="pai">
-      <Menu/>
-      <div class="div1">
-      <h1>Serviços Executados</h1>
-      <hr/>
-      <br/>
-      {console.log(produtos)}
-      <table>
-          <thead>
-              <tr>
-                  
-                  <th>Cliente ID</th>
-                  <th>Veiculo</th>
-                  <th>Servico</th>
-                  
-              </tr>
-          </thead>
-          <tbody>              
+const defaultTheme = createTheme();
+const useStyles = makeStyles(
+  (theme) =>
+    createStyles({
+      root: {
+        padding: theme.spacing(0.5, 0.5, 0),
+        justifyContent: 'space-between',
+        display: 'flex',
+        alignItems: 'flex-start',
+        flexWrap: 'wrap',
+        
 
-      {produtos.map(produto => (
-                  <tr class='tabela' key={produto.servico}>
-                  <td class='tabela coluna'>{produto.cliente_id}</td>
-                  <td class='tabela coluna'>{produto.veiculo}</td>
-                  <td class='tabela coluna'>{produto.servico_realizado}</td>
-              </tr>
-      ))}
-      </tbody>
-    </table>
+      },
+      textField: {
+        [theme.breakpoints.down('xs')]: {
+          width: '100%',
+
+        },
+        margin: theme.spacing(1, 0.5, 1.5),
+        '& .MuiSvgIcon-root': {
+          marginRight: theme.spacing(0.5),
+
+        },
+        '& .MuiInput-underline:before': {
+          borderBottom: `1px solid ${theme.palette.divider}`,
+        },
+      },
+    }),
+  { defaultTheme },
+);
+
+function QuickSearchToolbar(props) {
+  const classes = useStyles();
+
+  return (
+    <div style={{ 'margin-top' : '100px' }}className={classes.root} >
+      
+      <div>
+
+        <GridToolbarFilterButton />
+        <GridToolbarDensitySelector />
+
+      </div>
+      <TextField
+
+        variant="standard"
+        value={props.value}
+        onChange={props.onChange}
+        placeholder="Pesquisar"
+        className={classes.textField}
+        InputProps={{
+          startAdornment: <SearchIcon fontSize="small" />,
+          endAdornment: (
+            <IconButton
+
+              title="Clear"
+              aria-label="Clear"
+              size="small"
+              style={{ visibility: props.value ? 'visible' : 'hidden' }}
+              onClick={props.clearSearch}
+            >
+              <ClearIcon fontSize="small" />
+            </IconButton>
+          ),
+        }}
+      />
     </div>
-  </div>
-    )
+  );
+}
 
+QuickSearchToolbar.propTypes = {
+  clearSearch: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+};
+
+export default function QuickFilteringGrid({ produtos }) {
+  console.log("veio", produtos)
+  const produtos43 = produtos
+  const [searchText, setSearchText] = React.useState('');
+  const [rows, setRows] = React.useState(produtos43);
+  const [pageSize, setPageSize] = React.useState(5);
+
+  const requestSearch = (searchValue) => {
+    setSearchText(searchValue);
+    const searchRegex = new RegExp(escapeRegExp(searchValue), 'i');
+    const filteredRows = produtos43.filter((row) => {
+      return Object.keys(row).some((field) => {
+        console.log(searchRegex.test(row[field].toString()))
+        return searchRegex.test(row[field].toString());
+      });
+    });
+    setRows(filteredRows);
+  };
+
+  React.useEffect(() => {
+    setRows(produtos43);
+  }, [produtos43]);
+
+
+  const FormatarMoeda = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  });
+  const BRL = {
+    type: 'number',
+    width: 130,
+    valueFormatter: ({ value }) => FormatarMoeda.format(Number(value)),
+    cellClassName: 'font-tabular-nums',
+  };
+
+
+  return (
+    <div>
+      <Menu />
+
+      <div class="conteudo" style={{ width: '85%' }}>
+        <h1 class="titulo">Serviços</h1>
+
+        <DataGrid
+          localeText={ptBR.props.MuiDataGrid.localeText}
+          components={{ Toolbar: QuickSearchToolbar }}
+          rows={rows} //define onde vamos buscar os registros neste caso varivael rows da linha 98 e renderiza em tela
+          columns={colunasnv} //define onde vamos buscar os titulos das colunas neste caso varivael colunasnv da linha 24 e renderiza em tela
+          //columns={[colunasnv[0],colunasnv[1],colunasnv[2],colunasnv[3], {field: 'preco_unitario' , ...BRL} ] }
+          componentsProps={{
+            toolbar: {
+              value: searchText,
+              onChange: (event) => requestSearch(event.target.value),
+              clearSearch: () => requestSearch(''),
+            },
+          }}
+        />
+      </div>
+    </div>
+  );
 }

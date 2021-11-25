@@ -8,6 +8,7 @@ import './style.css'
 import Menu from '../menu/menu.jsx'
 import Select from './select.jsx';
 import Lista from './lista-vendas/index.jsx';
+import valortotal from './valortotal';
 
 
 const CadastrarButton = styled(Button)({
@@ -64,8 +65,8 @@ export default function ColorTextFields({produtos3}) {
       <div class="ctnFlex">
         <TextField id={"codproduto" + tamanhos} name={"codproduto" + tamanhos} label="Código Produto" color="primary" style={{ "width": "225px","display":"inline-block" }} focused />
         <TextField id={"produto" + tamanhos} name={"produto" + tamanhos} label="Produto" color="primary" style={{ "width": "225px","display":"inline-block" }} focused />
-        <TextField id={"quantidade" + tamanhos} name={"quantidade" + tamanhos} label="Quantidade" color="primary" style={{ "width": "225px","display":"inline-block" }} focused />
-        <TextField id={"valorund" + tamanhos} name={"valorund" + tamanhos} label="Valor Unitário" color="primary" style={{ "width": "225px","display":"inline-block" }} focused />
+        <TextField id={"quantidade" + tamanhos} name={"quantidade" + tamanhos} onChange={() => valortotal()} label="Quantidade"  color="primary" style={{ "width": "225px","display":"inline-block" }} focused />
+        <TextField id={"valorund" + tamanhos} name={"valorund" + tamanhos} onChange={() => valortotal()} label="Valor Unitário"  color="primary" style={{ "width": "225px","display":"inline-block" }} focused />
         <TextField id={"valorTotal" + tamanhos} name={"valorTotal" + tamanhos} label="Valor Total" color="primary" style={{ "width": "225px","display":"inline-block" }} focused />
         <br />
       </div>
@@ -75,8 +76,8 @@ export default function ColorTextFields({produtos3}) {
   return (
     <div class="pai"> 
       <Menu />
-      <div class="div10 ">
-        <h1>Cadastrar Vendas</h1>
+      <div class="div10 conteudo">
+        <h1 class="titulo" >Cadastrar Vendas</h1>
         <div class="formulario">
           <Box
             component="form"
@@ -88,7 +89,7 @@ export default function ColorTextFields({produtos3}) {
           >
             <TextField id="npedido1" name="npedido1" label="Nº Pedido Atual" color="primary" multiline rows="2" focused />
             <TextField label="Cliente Relacionado" color="primary" multiline rows="2" focused />
-            <TextField label="Pedido Valor Total" color="warning" multiline rows="2"  style={{ "width": "530px","color":"red !important"}} focused />
+            <TextField label="Pedido Valor Total" id="pedido_total" color="warning" multiline rows="2"  style={{ "width": "530px","color":"red !important"}}  focused />
             <br />
             {produtos}
             <CadastrarButton size="large" variant="outlined" endIcon={<SendIcon />}>Finalizar Venda</CadastrarButton>

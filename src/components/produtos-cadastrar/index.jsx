@@ -72,7 +72,7 @@ export default function ColorTextFields() {
                         <br/>
                         <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id="quantidade"  onChange={() => valortotal()} label="Quantidade" color="primary" focused />
                         <TextField id="preco_unitario" onChange={() => valortotal()} label="Valor Unitário" color="primary" focused />
-                        <TextField id="valor_total"  label="Valor Total" color="primary" focused  /><br />
+                        <TextField id="valor_total"  label="Valor Total" color="primary"  focused  /><br />
                         <CadastrarButton size="large" variant="outlined" onClick={() =>cadastrarnovo()} endIcon={<SendIcon />}>Cadastrar Produto</CadastrarButton>
                         <br />
                         <br />
