@@ -16,7 +16,7 @@ function Menu() {
                     <div class="dropdown">
                     <a class="fonteli" href="/cadastro-vendas"><i class="bi bi-cart-check"></i> Vendas</a>
                     <li class="vendas"><a class="fonteli vendas" href="/cadastro-vendas"><i class="bi bi-cart-check"></i> Cadastrar Venda</a></li>
-                    <li class="vendas"><a class="fonteli vendas" href="/cadastro-vendas"><i class="bi bi-cart-check"></i> Historico Vendas</a></li>
+                    <li class="vendas"><a class="fonteli vendas" href="/historico-vendas"><i class="bi bi-cart-check"></i> Historico Vendas</a></li>
                     </div>
                     <li><a class="fonteli" href="/cadastro-compras"><i class="bi bi-cart-check"></i> Compras</a></li>
                 </ul>
