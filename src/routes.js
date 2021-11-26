@@ -7,6 +7,7 @@ import CadastrarProdutos from './pages/produtos/cadastrarprodutos/index'
 import ListarProdutos from './pages/produtos/listarprodutos/index'
 import ListarServicos from './pages/servicos/index'
 import TelaVendas from './pages/vendas/index'
+import HistoricoVendas from './pages/vendas/historico-de-vendas/index'
 import CadastroCompras from './pages/compras/index'
 import ColorTextFields from './pages/clientes/clientecadastrar/index'
 
@@ -22,6 +23,7 @@ function Routes() {
                 <Route path="/listar-servicos" exact component={ListarServicos} />
                 <Route path="/cadastro-compras" exact component={CadastroCompras} />
                 <Route path="/cadastro-vendas" exact component={TelaVendas} />
+                <Route path="/historico-vendas" exact component={HistoricoVendas} />
 
                 <Route path="/" exact component={SignIn} />
             </switch>

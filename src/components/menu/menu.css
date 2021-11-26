@@ -91,3 +91,13 @@ tbody tr:hover {
     padding-left: 230px;
 
 }
+
+.vendas {
+    display: none;
+    font-size: 20px;
+}
+.dropdown:hover .vendas{
+    display: block;
+    font-size: 20px;
+}
+

@@ -1,0 +1,20 @@
+[
+    {
+        "id": 81794920,
+        "id_pedido": 81794920,
+        "fornecedor": "WR",
+        "categoria": "peça",
+        "quantidade": 100,
+        "valor_und": 2.50,
+        "valor_total": 2500
+    },
+    {
+        "id": 8179492330,
+        "id_pedido": 81794920,
+        "fornecedor": "WR3",
+        "categoria": "peça",
+        "quantidade": 1003,
+        "valor_und": 2.30,
+        "valor_total": 2500
+    }
+]

@@ -1,0 +1,43 @@
+[
+    {
+        "field": "descricao",
+        "headerName": "Descrição Venda",
+        "width": 350,
+        "editable": false
+    },
+    {
+        "field": "codigo_produto",
+        "headerName": "Código Venda",
+        "width": 250,
+        "editable": false
+    },
+    {
+        "field": "categoria",
+        "headerName": "Categoria",
+        "width": 250,
+        "editable": false
+    },
+    {
+        "field": "quantidade",
+        "headerName": "Qtd.Itens",
+        "width": 180,
+        "editable": false
+    },
+    {
+        "field": "preco_unitario",
+        "headerName": "Valor Total",
+        "width": 150,
+        "editable": false,
+        "style": "currency",
+        "currency": "BRL"
+    },
+    {
+        "field": "preco_unitario2",
+        "headerName": "Data Venda",
+        "width": 250,
+        "editable": false,
+        "style": "currency",
+        "currency": "BRL"
+    }
+    
+]
