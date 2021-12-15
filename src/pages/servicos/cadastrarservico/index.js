@@ -8,7 +8,7 @@ class CadastroServico extends Component {
   
   async componentDidMount() {
     //const response = await api.get('produtos/?format=json');
-    const response = await api.get('http://127.0.0.1:8080/servicos/');
+    const response = await api.get('https://ope2-backend.herokuapp.com/sistema/servicos/');
     console.log(response.data);
     this.setState({ produtos: response.data })
 

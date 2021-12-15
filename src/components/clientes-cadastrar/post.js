@@ -1,22 +1,26 @@
 function cadastrarnovo() {
     var axios = require('axios');
-    var preco_unitario = document.getElementById('preco_unitario').value;
-    var codigo_produto = document.getElementById('codigo_produto').value;
-    var descricao = document.getElementById('descricao').value;
-    var quantidade = document.getElementById('quantidade').value;
-    var categoria = document.getElementById('categoria').value;
+    var nome = document.getElementById('Nome').value;
+    var sobrenome = document.getElementById('Sobrenome').value;
+    var contato = document.getElementById('Contato').value;
+    var endereco = document.getElementById('Endereco').value;
+    var email = document.getElementById('email').value;
+    var veiculo = document.getElementById('Veiculo').value;
+    var placa = document.getElementById('Placa').value;
     var data = JSON.stringify({
         "id_produto": "",
-        "codigo_produto": codigo_produto,
-        "descricao": descricao,
-        "quantidade": quantidade,
-        "categoria": categoria,
-        "preco_unitario": preco_unitario
+        "nome": nome,
+        "sobrenome": sobrenome,
+        "contato": contato,
+        "endereco": endereco,
+        "email": email,
+        "veiculo": veiculo,
+        "placa": placa
     });
 
     var config = {
         method: 'post',
-        url: 'http://127.0.0.1:8080/produtos/',
+        url: 'https://ope2-backend.herokuapp.com/sistema/clientes/',
         headers: {
             'Content-Type': 'application/json'
         },

@@ -17,7 +17,7 @@ function cadastrarnovo() {
 
     var config = {
         method: 'post',
-        url: 'http://127.0.0.1:8080/sistema/produtos/',
+        url: 'https://ope2-backend.herokuapp.com/sistema/produtos/',
         headers: {
             'Content-Type': 'application/json'
         },
