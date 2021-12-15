@@ -4,9 +4,12 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import SendIcon from '@mui/icons-material/Send';
+import InputAdornment from '@mui/material/InputAdornment';
 import './style.css'
 import Menu from '../menu/menu.jsx'
-
+import Select from './select.jsx';
+import cadastrarnovo from './post.js'
+import valortotal from './valortotal';
 
 const CadastrarButton = styled(Button)({
     boxShadow: 'none',
@@ -53,7 +56,7 @@ export default function ColorTextFields() {
         <div class="pai">
             <Menu />
             <div class="div10 ">
-                <h1> Cadastro de Cliente</h1>
+                <h1>Cadastrar Servico</h1>
                 <div class="formulario">
                     <Box
                         component="form"
@@ -63,18 +66,25 @@ export default function ColorTextFields() {
                         noValidate
                         autoComplete="off"
                     >
-                        <TextField id="Nome" label="Nome" color="primary" focused />
-                        <TextField id="Sobrenome" label="Sobrenome" color="primary" focused />
-                        <TextField id="Contato" label="Contato"  color="primary" focused /><br />
-                        <TextField id="Endereco" label="Endereço" style={{ "width": "98%","color":"red !important"}} color="primary" focused /><br />
-                        <TextField id="email" label="E-mail" style={{ "width": "47%","color":"red !important"}} color="primary" focused />
-                        <TextField id="Veiculo" label="Veiculo" style={{ "width": "48%","color":"red !important"}}  color="primary" focused /><br />
-                        <TextField id="Placa" label="Placa" color="primary" focused />
-                        <CadastrarButton size="large" variant="outlined" endIcon={<SendIcon />}>Cadastrar</CadastrarButton>
+                        <TextField id="cliente_id" label="cliente_id" style={{ "width": "98%","height":"70px","color":"red !important"}} color="primary" focused />
+                        <br/>
+                        <TextField id="idservico" label="Código Servico" color="primary" focused />
+                        <TextField id="veiculo" label="Veiculo" color="primary" focused />
+                        <TextField id="valor_total"  label="Valor Total" color="primary"  focused  /><br />
+                        <br/>
+                        <TextField id="descricao" label="Servico" style={{ "width": "98%","height":"70px","color":"red !important"}} color="primary" focused />
+                        <br/>
+                        <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id="quantidade"  onChange={() => valortotal()} label="Quantidade" color="primary" focused />
+                        <TextField id="preco_unitario" onChange={() => valortotal()} label="Valor Unitário" color="primary" focused />
+                        
+                        <CadastrarButton size="large" variant="outlined" onClick={() =>cadastrarnovo()} endIcon={<SendIcon />}>Cadastrar Servico</CadastrarButton>
+                        <br />
+                        <br />
+                    
                     </Box>
+                    
                 </div>
             </div>
-            <div class="stars" ></div>
         </div>
 
 
