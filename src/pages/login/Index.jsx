@@ -70,6 +70,7 @@ export default function SignIn() {
               name="user"
               autoComplete="user"
               autoFocus
+              required="true"
             />
             <TextField
               margin="normal"
@@ -80,6 +81,7 @@ export default function SignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
+              required="true"
             />
             
             <Button
