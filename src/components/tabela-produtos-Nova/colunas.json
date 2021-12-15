@@ -1,14 +1,14 @@
 [
     {
-        "field": "descricao",
-        "headerName": "Produto",
-        "width": 350,
+        "field": "codigo_produto",
+        "headerName": "Código",
+        "width": 150,
         "editable": false
     },
     {
-        "field": "codigo_produto",
-        "headerName": "Código Produto",
-        "width": 150,
+        "field": "descricao",
+        "headerName": "Produto",
+        "width": 350,
         "editable": false
     },
     {
@@ -19,14 +19,14 @@
     },
     {
         "field": "quantidade",
-        "headerName": "Qtd.Estoque",
+        "headerName": "Estoque",
         "width": 180,
         "editable": false
     },
     {
         "field": "preco_unitario",
-        "headerName": "Valor Un",
-        "width": 150,
+        "headerName": "Valor Unitário",
+        "width": 170,
         "editable": false,
         "style": "currency",
         "currency": "BRL"

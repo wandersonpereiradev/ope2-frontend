@@ -1,29 +1,29 @@
 [
     {
+        "field": "id_servico",
+        "headerName": "ID",
+        "width": 150,
+        "editable": false,
+        "style": "currency",
+        "currency": "BRL"
+    },
+    {
         "field": "veiculo",
         "headerName": "Veiculo",
-        "width": 350,
+        "width": 250,
         "editable": false
     },
     {
         "field": "servico_realizado",
-        "headerName": "servico_realizado",
-        "width": 150,
+        "headerName": "Serviço Realizado",
+        "width": 250,
         "editable": false
     },
     {
         "field": "cliente_id",
-        "headerName": "Cliente ID",
-        "width": 150,
+        "headerName": "Código do Cliente",
+        "width": 250,
         "editable": false
-    },
-    {
-        "field": "id_servico",
-        "headerName": "ID",
-        "width": 350,
-        "editable": false,
-        "style": "currency",
-        "currency": "BRL"
     }
     
 ]
