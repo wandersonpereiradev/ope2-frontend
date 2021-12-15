@@ -18,7 +18,6 @@ function cadastrarnovo() {
         "placa": placa
     
     });
-    this.setState({id_produto:'', nome:'',sobrenome:'',contato:'',endereco:'',email:'',veiculo:'',placa:''})
     alert("Cliente cadastrado com sucesso!")
     var config = {
         method: 'post',
