@@ -7,7 +7,7 @@ console.warn = (warn) => warn.apply;
 function App(){
   return(
     <div>
-      <Routes />
+      <Routes/>
     </div>
   )
 }

@@ -17,7 +17,7 @@ function cadastrarnovo() {
 
     var config = {
         method: 'post',
-        url: 'http://127.0.0.1:8080/produtos/',
+        url: 'http://127.0.0.1:8080/sistema/produtos/',
         headers: {
             'Content-Type': 'application/json'
         },
