@@ -17,7 +17,7 @@ function cadastrarnovo() {
         "veiculo": veiculo,
         "placa": placa
     });
-
+    alert("Cadastrado")
     var config = {
         method: 'post',
         url: 'https://ope2-backend.herokuapp.com/sistema/clientes/',

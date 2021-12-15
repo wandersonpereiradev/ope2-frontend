@@ -6,6 +6,7 @@ import { styled } from '@mui/material/styles';
 import SendIcon from '@mui/icons-material/Send';
 import './style.css'
 import Menu from '../menu/menu.jsx'
+import cadastrarnovo from './post.js'
 
 
 const CadastrarButton = styled(Button)({
@@ -67,10 +68,9 @@ export default function ColorTextFields() {
                         <TextField id="Sobrenome" label="Sobrenome" color="primary" focused />
                         <TextField id="Contato" label="Contato"  color="primary" focused /><br />
                         <TextField id="Endereco" label="Endereço" style={{ "width": "98%","color":"red !important"}} color="primary" focused /><br />
-                        <TextField id="email" label="E-mail" style={{ "width": "47%","color":"red !important"}} color="primary" focused />
-                        <TextField id="Veiculo" label="Veiculo" style={{ "width": "48%","color":"red !important"}}  color="primary" focused /><br />
-                        <TextField id="Placa" label="Placa" color="primary" focused />
-                        <CadastrarButton size="large" variant="outlined" endIcon={<SendIcon />}>Cadastrar</CadastrarButton>
+                        <TextField id="Veiculo" label="Veiculo" style={{ "width": "47%","color":"red !important"}} color="primary" focused />
+                        <TextField id="Placa" label="Placa" style={{ "width": "48%","color":"red !important"}}  color="primary" focused /><br />
+                        <CadastrarButton size="large" variant="outlined" onClick={() =>cadastrarnovo()} endIcon={<SendIcon />}>Cadastrar</CadastrarButton>
                     </Box>
                 </div>
             </div>

@@ -1,28 +1,28 @@
 import React, { Component } from "react";
-import TabelaDeProdutos from "../../../components/clientes-consultar/index";
+import TabelaDeclientes from "../../../components/clientes-consultar/index";
 import api from '../../API/api';
 import '../../Estilo/estilo.css'
 import '../../Estilo/styles.css';
 
 class ListarClientes extends Component {
   state = {
-    produtos: [],
+    clientes: [],
   }
 
   async componentDidMount() {
-    //const response = await api.get('produtos/?format=json');
+    //const response = await api.get('clientes/?format=json');
     const response = await api.get('https://ope2-backend.herokuapp.com/sistema/clientes/');
     console.log(response.data);
-    this.setState({ produtos: response.data })
+    this.setState({ clientes: response.data })
 
   }
 
   render() {
-    const { produtos } = this.state;
+    const { clientes } = this.state;
 
     return (
       <section className="">
-        <TabelaDeProdutos produtos={produtos} />
+        <TabelaDeclientes clientes={clientes} />
       </section>
     )
   }

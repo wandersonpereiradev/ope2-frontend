@@ -19,7 +19,7 @@ function escapeRegExp(value) {
   return value.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
 }
 
-// Map Json dados pedidos para produtos43
+// Map Json dados pedidos para clientes43
 //const produtos5 = {produtos4}
 const produtoslist = require("./dados")
 const colunasnv = require("./colunas")
@@ -102,17 +102,17 @@ QuickSearchToolbar.propTypes = {
   value: PropTypes.string.isRequired,
 };
 
-export default function QuickFilteringGrid({ produtos }) {
-  console.log("veio", produtos)
-  const produtos43 = produtos
+export default function QuickFilteringGrid({ clientes }) {
+  console.log("veio", clientes)
+  const clientes43 = clientes
   const [searchText, setSearchText] = React.useState('');
-  const [rows, setRows] = React.useState(produtos43);
+  const [rows, setRows] = React.useState(clientes43);
   const [pageSize, setPageSize] = React.useState(5);
 
   const requestSearch = (searchValue) => {
     setSearchText(searchValue);
     const searchRegex = new RegExp(escapeRegExp(searchValue), 'i');
-    const filteredRows = produtos43.filter((row) => {
+    const filteredRows = clientes43.filter((row) => {
       return Object.keys(row).some((field) => {
         console.log(searchRegex.test(row[field].toString()))
         return searchRegex.test(row[field].toString());
@@ -122,8 +122,8 @@ export default function QuickFilteringGrid({ produtos }) {
   };
 
   React.useEffect(() => {
-    setRows(produtos43);
-  }, [produtos43]);
+    setRows(clientes43);
+  }, [clientes43]);
 
 
   const FormatarMoeda = new Intl.NumberFormat('pt-BR', {

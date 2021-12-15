@@ -1,38 +1,30 @@
 [
     {
-        "field": "descricao",
+        "field": "nome",
         "headerName": "Nome",
         "width": 150,
         "editable": false
     },
     {
-        "field": "codigo_produto",
+        "field": "sobrenome",
         "headerName": "Sobrenome",
         "width": 150,
         "editable": false
     },
     {
-        "field": "Contato",
+        "field": "contato",
         "headerName": "Contato",
         "width": 150,
         "editable": false
     },
     {
-        "field": "quantidade",
+        "field": "endereco",
         "headerName": "Endereço",
         "width": 380,
         "editable": false
     },
     {
-        "field": "preco_unitario",
-        "headerName": "E-Mail",
-        "width": 250,
-        "editable": false,
-        "style": "currency",
-        "currency": "BRL"
-    },
-    {
-        "field": "Veiculo",
+        "field": "veiculo",
         "headerName": "Veiculo",
         "width": 150,
         "editable": false,
@@ -41,7 +33,7 @@
     }
     ,
     {
-        "field": "Placa",
+        "field": "placa",
         "headerName": "Placa",
         "width": 150,
         "editable": false,
