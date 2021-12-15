@@ -33,7 +33,8 @@ function Menu() {
                         </div>
                         <li><a class="fonteli" href="/menu-produtos"><i class="bi bi-calendar-plus"></i> Produtos</a></li>
                         <div class="dropdown">
-                            <li><a class="fonteli" href="/listar-servicos"><i class="bi bi-calendar-plus"></i> Servicos</a></li>
+                            <li><a class="fonteli" ><i class="bi bi-calendar-plus"></i> Servicos</a></li>
+                            <li><a class="fonteli vendas" href="/listar-servicos"><i class="bi bi-calendar-plus"></i> Listar Servicos</a></li>
                             <li><a class="fonteli vendas" href="/cadastro-servico"><i class="bi bi-calendar-plus"></i> Cadastrar Servicos</a></li>
                         </div>
 

@@ -65,11 +65,12 @@ export default function ColorTextFields() {
                         autoComplete="off"
                     >
                         <TextField id="Nome" label="Nome" color="primary" focused />
-                        <TextField id="Sobrenome" label="Sobrenome" color="primary" focused />
-                        <TextField id="Contato" label="Contato"  color="primary" focused /><br />
-                        <TextField id="Endereco" label="Endereço" style={{ "width": "98%","color":"red !important"}} color="primary" focused /><br />
-                        <TextField id="Veiculo" label="Veiculo" style={{ "width": "47%","color":"red !important"}} color="primary" focused />
-                        <TextField id="Placa" label="Placa" style={{ "width": "48%","color":"red !important"}}  color="primary" focused /><br />
+                        <TextField id="Sobrenome" label="Sobrenome" color="primary" />
+                        <TextField id="Contato" label="Contato"  color="primary" /><br />
+                        <TextField id="Endereco" label="Endereço" style={{ "width": "98%","color":"red !important"}} color="primary" /><br />
+                        <TextField id="Email" label="Email" style={{ "width": "98%","color":"red !important"}} color="primary" /><br />
+                        <TextField id="Veiculo" label="Veiculo" style={{ "width": "47%","color":"red !important"}} color="primary" />
+                        <TextField id="Placa" label="Placa" style={{ "width": "48%","color":"red !important"}}  color="primary" /><br />
                         <CadastrarButton size="large" variant="outlined" onClick={() =>cadastrarnovo()} endIcon={<SendIcon />}>Cadastrar</CadastrarButton>
                     </Box>
                 </div>

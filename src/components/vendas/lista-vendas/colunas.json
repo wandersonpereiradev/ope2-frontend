@@ -1,14 +1,14 @@
 [
     {
-        "field": "descricao",
-        "headerName": "Produto",
+        "field": "codigo_produto",
+        "headerName": "Código",
         "width": 150,
         "editable": false
     },
     {
-        "field": "codigo_produto",
-        "headerName": "Código Produto",
-        "width": 150,
+        "field": "descricao",
+        "headerName": "Produto",
+        "width": 350,
         "editable": false
     },
     {
@@ -19,14 +19,14 @@
     },
     {
         "field": "quantidade",
-        "headerName": "Qtd.Estoque",
-        "width": 180,
+        "headerName": "Estoque",
+        "width": 130,
         "editable": false
     },
     {
         "field": "preco_unitario",
-        "headerName": "Valor Un",
-        "width": 150,
+        "headerName": "Valor Unitário",
+        "width": 180,
         "editable": false
     }
     

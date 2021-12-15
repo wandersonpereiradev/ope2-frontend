@@ -4,7 +4,7 @@ function cadastrarnovo() {
     var sobrenome = document.getElementById('Sobrenome').value;
     var contato = document.getElementById('Contato').value;
     var endereco = document.getElementById('Endereco').value;
-    var email = document.getElementById('email').value;
+    var email = document.getElementById('Email').value;
     var veiculo = document.getElementById('Veiculo').value;
     var placa = document.getElementById('Placa').value;
     var data = JSON.stringify({
@@ -16,15 +16,17 @@ function cadastrarnovo() {
         "email": email,
         "veiculo": veiculo,
         "placa": placa
+    
     });
-    alert("Cadastrado")
+    this.setState({id_produto:'', nome:'',sobrenome:'',contato:'',endereco:'',email:'',veiculo:'',placa:''})
+    alert("Cliente cadastrado com sucesso!")
     var config = {
         method: 'post',
         url: 'https://ope2-backend.herokuapp.com/sistema/clientes/',
         headers: {
             'Content-Type': 'application/json'
         },
-        data: data
+        data: data,
     };
 
     axios(config)

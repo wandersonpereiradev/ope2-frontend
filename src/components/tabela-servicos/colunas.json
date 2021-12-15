@@ -1,8 +1,8 @@
 [
     {
-        "field": "id_servico",
-        "headerName": "ID",
-        "width": 150,
+        "field": "id",
+        "headerName": "Número do Serviço",
+        "width": 350,
         "editable": false,
         "style": "currency",
         "currency": "BRL"
